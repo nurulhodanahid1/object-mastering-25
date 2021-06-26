@@ -5,7 +5,7 @@ console.log(1111);
 setTimeout(() => {
     doSomething();
 }, 1000);
-setTimeout(() => {                               // joto code thakbe sob run hoar por setTimeout And setInterval cholbe;
+setTimeout(() => {               // joto code thakbe sob run hoar por setTimeout And setInterval cholbe;
     console.log(5555);
 }, 2000);
 setTimeout(function(){
