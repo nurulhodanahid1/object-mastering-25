@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This</title>
+</head>
+<body>
+    <h1>This is not confused anymore</h1>
+    <p onclick="this.innerText = 'Why you clicked me?'">I'm paragraph. Don't clicked me</p>
+
+    <script>
+        const myObj = {
+            name: 'Lionel Messi',
+            age: 34,
+            getFullName : function(){
+                console.log(this);
+                return 'Mr ' + this.name;
+            }
+        }
+        console.log(myObj.getFullName());
+        myObj.getFullName();
+
+        const anotherObj = {
+            name: 'Lautoro Martinez',
+            age: 26
+        }
+        anotherObj.getFullName = myObj.getFullName;
+        console.log(anotherObj.getFullName());
+        anotherObj.getFullName();
+
+
+        function add(a, b){
+            console.log(this);               // window houar karon holo tader bame kono kisu die mention kora nai;
+            return a + b;
+        }
+        add(); // eta window hoe jabe
+        anotherObj.sum = add;
+        anotherObj.sum();
+
+        setTimeout(function(){
+            console.log(this);   // etao window hoe jabe
+        }, 10000);
+    </script>
+</body>
+</html>
